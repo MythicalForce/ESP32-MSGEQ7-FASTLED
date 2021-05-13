@@ -12,3 +12,5 @@ Code for using the MSGEQ7 ic with ESP32 and displaying it on a LED Strip using F
 One of the first steps to remove this noise is to set some sort of “floor” level. The idea here is that we assume that anything below a certain level (our “floor”) is assumed to be noise, in which case we will reset that value to 0.
 
 We also sample each band 5 times and average them out.
+
+so i got it down to 0 with some minor 1's or 2's (just be increasing the **floor** it can be removed but by doing that we also lose some response time)
