@@ -7,10 +7,10 @@ Code for using the MSGEQ7 ic with ESP32 and displaying it on a LED Strip using F
 3. **WS2812B LED Strip** (Current length is 44 Led's, waiting for new longer strips to arrive)
 
 # MSGEQ7 STATUS
-**05.13.2021** - i got it up and running with some terrible noise levels on all 7 bands ranging from 100 up to 300!
+**05.13.2021** - i got it up and running with some terrible noise levels on all 7 bands ranging from 100 up to 300! so i did 2 things to sort this.
 
-One of the first steps to remove this noise is to set some sort of “floor” level. The idea here is that we assume that anything below a certain level (our “floor”) is assumed to be noise, in which case we will reset that value to 0.
+1. The first step to remove this noise is to set some sort of “floor” level. The idea here is that we assume that anything below a certain level (our “floor”) is assumed to be noise, in which case we will reset that value to 0.
 
-We also sample each band 5 times and average them out.
+2. We sample each band 5 times and average them out.
 
 so i got it down to 0 with some minor 1's or 2's (just be increasing the **floor** it can be removed but by doing that we also lose some response time)
