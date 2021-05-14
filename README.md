@@ -18,8 +18,7 @@ so i got it down to 0 with some minor 1's or 2's (just be increasing the **floor
 # FASTLED STATUS
 **05.14.2021** - Added some FastLED support to show a 7 pixel "graph" of the output from the MSGEQ7 where each pixel represents a frequency.
 
-Band frequencies
-
+# BAND FREQUENCY
  * Band 0 - 63Hz
  * Band 1 - 160Hz
  * Band 2 - 400Hz
