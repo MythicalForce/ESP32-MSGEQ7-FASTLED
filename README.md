@@ -14,3 +14,16 @@ Code for using the MSGEQ7 ic with ESP32 and displaying it on a LED Strip using F
 2. We sample each band 5 times and average them out.
 
 so i got it down to 0 with some minor 1's or 2's (just be increasing the **floor** it can be removed but by doing that we also lose some response time)
+
+# FASTLED STATUS
+**05.14.2021** - Added some FastLED support to show a 7 pixel "graph" of the output from the MSGEQ7 where each pixel represents a frequency.
+
+Band frequencies
+
+ * Band 0 - 63Hz
+ * Band 1 - 160Hz
+ * Band 2 - 400Hz
+ * Band 3 - 1kHz
+ * Band 4 - 2.5kHz
+ * Band 5 - 6.25kHz
+ * Band 6 - 16kHZ
