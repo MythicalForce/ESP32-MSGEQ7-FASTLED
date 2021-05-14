@@ -17,21 +17,25 @@ void MSGEQ7::read(void)
 {
     uint16_t tmpVal;
 
+    // Pulse the reset signal to latch the current MSGEQ7 values
     digitalWrite(_resetPin, HIGH);
     digitalWrite(_resetPin, LOW);
-    delayMicroseconds(80);
+    delayMicroseconds(80);        // Delay to meet the minimum reset-to-strobe time (72us)
 
+    // Cycle through the MSGEQ7's seven spectrum band
     for (uint8_t iBand = 0; iBand < _NumBands; iBand++)
     {
-        digitalWrite(_strobePin, LOW);
-        delayMicroseconds(40);
+        digitalWrite(_strobePin, LOW); // Read current band (then increment to next band)
+        delayMicroseconds(40);         // Wait for the outputs to settle (min 36us)
 
+        // Start Sampling
         tmpVal = 0;
         for (uint8_t iSample = 0; iSample < _NumSamples; iSample++)
         {
-            tmpVal = tmpVal + analogRead(_dataPin);
+            tmpVal = tmpVal + analogRead(_dataPin); // Read & Store current values from MSGEQ7
         }
         _data[iBand] = tmpVal / _NumSamples;
+        // End Sampling
 
         digitalWrite(_strobePin, HIGH);
         delayMicroseconds(40);
