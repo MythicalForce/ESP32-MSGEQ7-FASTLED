@@ -27,4 +27,6 @@ void loop()
   {
     leds[i].setHSV(bandHue[i], 255, _MSGEQ7.get(i) & 0xff);
   }
+
+  FastLED.show();
 }
